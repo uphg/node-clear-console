@@ -4,7 +4,7 @@ git add .
 echo -e "\n# commit"
 git commit -m "first commit"
 
-echo -e "\n# remote origin(GitHub | Gitee)"
+echo -e "\n# remote origin(GitHub|Gitee)"
 git remote add github git@github.com:uphg/node-clear-console.git
 git remote add gitee git@gitee.com:uphg/node-clear-console.git
 
