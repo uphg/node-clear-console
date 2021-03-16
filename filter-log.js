@@ -4,7 +4,6 @@ const regex = {
 
 function filterLog(content) {
   if(!regex.BEFORE.test(content)) return false
-
   let text = ''
 
   function setText(content) {
@@ -28,10 +27,8 @@ function filterLog(content) {
     }
     setText(finalText)
   }
-
-
+  
   setText(content)
-
   return text
 }
 
@@ -57,7 +54,5 @@ function markMany(text) {
   }
   return saveMark(text)
 }
-
-
 
 module.exports = filterLog
