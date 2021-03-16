@@ -9,8 +9,8 @@ function filterLog(content) {
 
   function setText(content) {
     let finalText = '' // 最后过滤完的文本内容
-    const index = content.search(regex.BEFORE)
 
+    const index = content.search(regex.BEFORE)
     const before = content.slice(0, index)
     const after = content.slice(index + 12)
     const mark = after.match(/[\(\)]/)
@@ -21,6 +21,7 @@ function filterLog(content) {
 
     text += before
 
+    // 判断是否还存在 console
     if (finalText.search(regex.BEFORE) < 0) {
       text += finalText
       return false
@@ -34,32 +35,26 @@ function filterLog(content) {
   return text
 }
 
-
-
+// 内部没有嵌套括号
 function markSingle(text) {
   const index = text.search(/\)/)
   const after = text.slice(index + 1)
   return after
 }
 
+// 内部存在嵌套括号
 function markMany(text) {
   let number = 2
-  
   function saveMark(text) {
     const after = text.input.slice(text.index + 1)
     const mark = after.match(/[\(\)]/)
 
     if (!mark || number === 0) return after
-    if (mark[0] === ')') {
-      number -= 1
-      return saveMark(mark)
-    }
-    if (mark[0] === '(') {
-      number += 1
-      return saveMark(mark)
-    }
+    if (mark[0] === ')') number -= 1
+    if (mark[0] === '(') number += 1
+
+    return saveMark(mark)
   }
-  
   return saveMark(text)
 }
 

@@ -18,10 +18,10 @@ function clearLog(filePath) {
         if (err) return console.log(err)
 
         const isFile = state.isFile()        // 是文件
-        const isDir  = state.isDirectory()    // 是目录
+        const isDir = state.isDirectory()    // 是目录
 
-        if (isFile) { setFile(filedir) }
-        if (isDir)  { clearLog(filedir)  }
+        if (isFile) setFile(filedir)
+        if (isDir) clearLog(filedir)
       })
     })
   })
