@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const setFile = require('./set-file.js') // 获取文件内容，进行编辑
+const setFile = require('./set-file.js') // 编辑文件内容
 
 // 解析需要遍历的文件夹（以当前 src 目录为例）
 const base = path.resolve('src');

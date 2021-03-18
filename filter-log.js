@@ -7,14 +7,14 @@ function filterLog(content) {
   let text = ''
 
   function setText(content) {
-    let finalText = '' // 最后过滤完的文本内容
+    let finalText = '' // 过滤完的文本内容
 
     const index = content.search(regex.BEFORE)
     const before = content.slice(0, index)
     const after = content.slice(index + 12)
     const mark = after.match(/[\(\)]/)
 
-    if (!mark || !mark[0]) return console.log('语法错误，"console.log(" 后应是 ")"')
+    if (!mark || !mark[0]) return console.log('语法错误，"console.log(" 后缺失 ")"')
     if (mark[0] === ')') finalText = markSingle(after)
     if (mark[0] === '(') finalText = markMany(mark)
 
