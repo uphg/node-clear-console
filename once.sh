@@ -1,8 +1,13 @@
-# 第一次关联两个仓库
-git init
+# 关联两个远程仓库
+if [ -z $1 ];then
+parame="update"
+else
+parame="$1"
+fi
+
 git add .
 echo -e "\n# commit"
-git commit -m "first commit"
+git commit -m "${parame}"
 
 echo -e "\n# remote origin(GitHub|Gitee)"
 git remote add github git@github.com:uphg/node-clear-console.git
