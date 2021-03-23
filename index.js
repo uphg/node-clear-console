@@ -7,21 +7,19 @@ const setFile = require('./set-file.js') // 编辑文件内容
 const base = path.resolve('src');
 
 function clearLog(filePath) {
-  fs.readdir(filePath, (error, fileList)=>{
+  fs.readdir(filePath, (error, fileList) => {
     if (error) return console.log(error)
-
-    fileList.forEach((fileName)=>{
-      const filedir = path.join(filePath, fileName)
-
+    fileList.forEach((fileName) => {
+      const fielder = path.join(filePath, fileName)
       // stat 获取文件信息对象，包括文件大小、文件类型等。
-      fs.stat(filedir, (err, state)=>{
+      fs.stat(fielder, (err, state) => {
         if (err) return console.log(err)
 
         const isFile = state.isFile()        // 是文件
         const isDir = state.isDirectory()    // 是目录
 
-        if (isFile) setFile(filedir)
-        if (isDir) clearLog(filedir)
+        if (isFile) setFile(fielder)
+        if (isDir) clearLog(fielder)
       })
     })
   })

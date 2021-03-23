@@ -1,8 +1,6 @@
 
 function fn() {
-  let a = 1; console.log(111(22)+33) );alksdjflk
-  let a = 2; console.log(111(22)+33) );alksdjflk
-  let a = 3; console.log(111(22)+33) );alksdjflk
-  let a = 4; console.log(111(22)+33) );alksdjflk
+  const a = 1; console.log(111(22)+33) ); const b = fn => 2
+  const b = 'console.log('; console.log('(' + ')' + 'console.log('+ ')') + ')'
 }
 
