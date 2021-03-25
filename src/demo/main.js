@@ -8,7 +8,7 @@ function fn() {
     )
     +
     333
+    + 'console.log('
   )
-  ) // 多余的括号
 }
 

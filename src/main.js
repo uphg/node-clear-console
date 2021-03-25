@@ -1,6 +1,6 @@
 
 function fn() {
-  const a = 1; console.log(111(22)+33) ); const b = fn => 2
-  const b = 'console.log('; console.log('(' + ')' + 'console.log('+ ')') + ')'
+  console.log('123123')
+  const a = 1; console.log('吃苹果'); const b = fn => 2
 }
 
